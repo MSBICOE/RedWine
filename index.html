@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>What Characteristics of Red Wine determine its quality?</title>
+  <meta charset="utf-8">
+  <meta name="description" content="What Characteristics of Red Wine determine its quality?">
+  <meta name="author" content="Steven Wang">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="libraries/widgets/bootstrap/css/bootstrap.css"></link>
+<link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>What Characteristics of Red Wine determine its quality?</h1>
+    <h2>Exploratory Data Analysis of Red Wine Data</h2>
+    <p>Steven Wang<br/></p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>Introduction</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>This app serves for Red Wine Quality data exploratory analysis.</p>
+
+<p>The red wine data set can get from <a href="https://archive.ics.uci.edu/ml/datasets/Wine+Quality">Machine Learning Repository website</a>, which was donated by Paulo Cortez, University of Minho, Portugal. This data set has 1599 obervations and 12 variables</p>
+
+<p>A new variable class was added into the data set while performing this analysis. The class is a categorical variable and is defined by this rules:</p>
+
+<ul>
+<li>if quality &lt;= 4, then &quot;Low Quality&quot;</li>
+<li>if quality &gt;= 7, then &quot;High Quality&quot;</li>
+<li>else &quot;Average&quot;</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>A peek of Red Wine Data Set</h2>
+  </hgroup>
+  <article data-timings="">
+    <pre><code>## Observations: 1599
+## Variables:
+## $ fixed.acidity        (dbl) 7.4, 7.8, 7.8, 11.2, 7.4, 7.4, 7.9, 7.3, ...
+## $ volatile.acidity     (dbl) 0.700, 0.880, 0.760, 0.280, 0.700, 0.660,...
+## $ citric.acid          (dbl) 0.00, 0.00, 0.04, 0.56, 0.00, 0.00, 0.06,...
+## $ residual.sugar       (dbl) 1.9, 2.6, 2.3, 1.9, 1.9, 1.8, 1.6, 1.2, 2...
+## $ chlorides            (dbl) 0.076, 0.098, 0.092, 0.075, 0.076, 0.075,...
+## $ free.sulfur.dioxide  (dbl) 11, 25, 15, 17, 11, 13, 15, 15, 9, 17, 15...
+## $ total.sulfur.dioxide (dbl) 34, 67, 54, 60, 34, 40, 59, 21, 18, 102, ...
+## $ density              (dbl) 0.9978, 0.9968, 0.9970, 0.9980, 0.9978, 0...
+## $ pH                   (dbl) 3.51, 3.20, 3.26, 3.16, 3.51, 3.51, 3.30,...
+## $ sulphates            (dbl) 0.56, 0.68, 0.65, 0.58, 0.56, 0.56, 0.46,...
+## $ alcohol              (dbl) 9.4, 9.8, 9.8, 9.8, 9.4, 9.4, 9.4, 10.0, ...
+## $ quality              (int) 5, 5, 5, 6, 5, 5, 5, 7, 7, 5, 5, 5, 5, 5,...
+## $ class                (fctr) Average, Average, Average, Average, Aver...
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-3" style="background:;">
+  <hgroup>
+    <h2>How to Use the App</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>This Red Wine Quality data exploratory app demonstrates a core feature of Shiny: <strong>interactivity</strong> and <strong>reactivity</strong>. </p>
+
+<p><img src="assets/fig/unnamed-chunk-2-1.png" alt="plot of chunk unnamed-chunk-2"> </p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    <h2>Let&#39;s try online</h2>
+  </hgroup>
+  <article data-timings="">
+    <iframe src="https://stevenwang.shinyapps.io/SWDDD/" width="800" height="320"></iframe>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Introduction'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='A peek of Red Wine Data Set'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='How to Use the App'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Let&#39;s try online'>
+         4
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  <script src="libraries/widgets/bootstrap/js/bootstrap.min.js"></script>
+<script src="libraries/widgets/bootstrap/js/bootbox.min.js"></script>
+
+  <script>  
+  $(function (){ 
+    $("#example").popover(); 
+    $("[rel='tooltip']").tooltip(); 
+  });  
+  </script>  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>

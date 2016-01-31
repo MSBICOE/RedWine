@@ -1,0 +1,79 @@
+---
+title       : What Characteristics of Red Wine determine its quality?
+subtitle    : Exploratory Data Analysis of Red Wine Data
+author      : Steven Wang
+job         : 
+framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
+highlighter : highlight.js  # {highlight.js, prettify, highlight}
+hitheme     : tomorrow      # 
+widgets     : [bootstrap]            # {mathjax, quiz, bootstrap}
+mode        : selfcontained # {standalone, draft}
+knit        : slidify::knit2slides
+---
+
+## Introduction
+
+This app serves for Red Wine Quality data exploratory analysis.
+
+The red wine data set can get from [Machine Learning Repository website](https://archive.ics.uci.edu/ml/datasets/Wine+Quality), which was donated by Paulo Cortez, University of Minho, Portugal. This data set has 1599 obervations and 12 variables
+
+A new variable class was added into the data set while performing this analysis. The class is a categorical variable and is defined by this rules:
+
+* if quality <= 4, then "Low Quality"
+* if quality >= 7, then "High Quality"
+* else "Average"
+
+--- .class #id 
+
+## A peek of Red Wine Data Set
+
+```{r echo=FALSE, message=FALSE,cache=TRUE}
+library(dplyr)
+data <- read.csv("assets/data/winequality-red.csv",sep=";")
+data <- data %>% mutate(class=ifelse(quality <=4,"Low Quality",ifelse(quality>=8,"High Quality","Average")))
+data$class <- factor(data$class, levels = c("Low Quality", "Average", "High Quality"), ordered=TRUE)
+glimpse(data)
+
+```
+
+--- 
+## How to Use the App
+
+This Red Wine Quality data exploratory app demonstrates a core feature of Shiny: **interactivity** and **reactivity**. 
+
+```{r echo=FALSE, message=FALSE,fig.width=14,fig.height=6}
+library(ggplot2)
+library(gridExtra)
+
+winedata <- data 
+g <- ggplot(winedata, aes(x = winedata[,1], y = ..density..)) +
+    geom_histogram(position="identity",color = "blue",fill="white",binwidth = diff(range(winedata$fixed.acidity)) /30) +
+    geom_density(color="magenta") +
+    labs(x="fixed acidity", y = paste("Density of", "fixed acidity", sep =" "), 
+         title = paste("Data Distribution for:","fixed acidity","(Bin size:",30,")")) +
+    theme_bw() +
+    theme(plot.title = element_text(face ="bold",color = "red", size = 16),
+          axis.title = element_text(face ="bold",color = "blue", size = 12),
+          axis.text = element_text(color = "blue", size = 10)
+    ) 
+
+    g1 <- ggplot(winedata, aes(x = class,y = fixed.acidity)) +
+        geom_boxplot(aes(fill=class)) +
+        geom_dotplot(binaxis = "y", binwidth = diff(range(winedata$fixed.acidity)) / 30 / 5, stackdir="center", fill = NA) +
+        labs(x="", y = "fixed acidity", 
+             title = paste("Boxplot for:","fixed acidity","by Wine Class")) +
+        theme_bw() +
+        theme(plot.title = element_text(face ="bold",color = "red", size = 16),
+              axis.title = element_text(face ="bold",color = "blue", size = 12),
+              axis.text = element_text(color = "blue", size = 10)
+        ) 
+    
+    grid.arrange(g,g1,ncol=2)
+
+
+```
+
+--- 
+## Let's try online
+
+<iframe src="https://stevenwang.shinyapps.io/SWDDD/" width="800" height="320"></iframe>
