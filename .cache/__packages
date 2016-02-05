@@ -2,3 +2,9 @@ base
 dplyr
 ggplot2
 gridExtra
+googleVis
+httr
+ggthemes
+scales
+ineq
+slidify

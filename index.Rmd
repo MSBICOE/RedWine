@@ -76,4 +76,19 @@ g <- ggplot(winedata, aes(x = winedata[,1], y = ..density..)) +
 --- 
 ## Let's try online
 
-<iframe src="https://stevenwang.shinyapps.io/SWDDD/" width="800" height="320"></iframe>
+<!--iframe src="https://stevenwang.shinyapps.io/SWDDD/" width="800" height="320"></iframe-->
+<iframe width="800" height="600" src="https://app.powerbi.com/view?r=eyJrIjoiOTg1OTFjZmMtOGQyZS00YjhhLTlkNDktNjMxODFiYTVjNTdiIiwidCI6Ijk4ZjU3ZTQwLTc4OTktNDNjYy04MjI2LWQ4Y2ZhNTFlN2MyOSIsImMiOjEwfQ%3D%3D" frameborder="0"></iframe>
+
+---
+
+```{r echo=FALSE, message=FALSE}
+library(googleVis)
+    
+```
+
+```{r echo=FALSE}
+plot(gvisMotionChart(Fruits,idvar= 'Fruit',timevar = 'Year'))
+    
+```
+
+

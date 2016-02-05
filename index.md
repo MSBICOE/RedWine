@@ -56,4 +56,13 @@ This Red Wine Quality data exploratory app demonstrates a core feature of Shiny:
 --- 
 ## Let's try online
 
-<iframe src="https://stevenwang.shinyapps.io/SWDDD/" width="800" height="320"></iframe>
+<!--iframe src="https://stevenwang.shinyapps.io/SWDDD/" width="800" height="320"></iframe-->
+<iframe width="800" height="600" src="https://app.powerbi.com/view?r=eyJrIjoiOTg1OTFjZmMtOGQyZS00YjhhLTlkNDktNjMxODFiYTVjNTdiIiwidCI6Ijk4ZjU3ZTQwLTc4OTktNDNjYy04MjI2LWQ4Y2ZhNTFlN2MyOSIsImMiOjEwfQ%3D%3D" frameborder="0"></iframe>
+
+---
+
+
+
+
+
+
